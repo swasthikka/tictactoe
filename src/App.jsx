@@ -5,11 +5,13 @@ import { calculateWinner } from "./winner";
 import StatusMessage from "./Components/StatusMessage";
 import History from "./Components/History";
 
+const NEW_GAME = [{ squares: Array(9).fill(null), isXNext: false }];
+
 function App() {
   const [history, setHistory] = useState([
     { squares: Array(9).fill(null), isXNext: false },
   ]);
-  const [currentMove, setCurrentMove] = useState(0);
+  const [currentMove, setCurrentMove] = useState(NEW_GAME);
 
   const gamingBoard = history[currentMove];
 
